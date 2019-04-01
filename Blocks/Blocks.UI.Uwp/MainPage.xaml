@@ -8,7 +8,22 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ButtonStyles.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
     <Grid>
+        <Button Style="{StaticResource BasicButtonStyle}" 
+                Background="{x:Null}" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="20">
+            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" FontSize="28"/>
+        </Button>
+
         <TextBlock Text="{x:Bind ViewModel.Greeting}" 
                    Style="{StaticResource HeaderTextBlockStyle}"
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
