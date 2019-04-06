@@ -1,0 +1,8 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Blocks.UI.Uwp.Styles">
+    <Style x:Key="MenuHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource SubheaderTextBlockStyle}">
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+</ResourceDictionary>
