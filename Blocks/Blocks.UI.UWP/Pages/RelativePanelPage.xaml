@@ -9,6 +9,55 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock Text="Hello From Relative Panel View" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Rectangle x:Name="Aqua" Fill="Black"
+                       Height="33" Width="88"
+                       />
+            <Rectangle x:Name="BlueRect" 
+                       Fill="Black"
+                        Height="88" Width="33"
+                       RelativePanel.RightOf="Aqua"
+               />
+            <Rectangle x:Name="Center" Fill="Black" 
+                       Height="33" Width="33"
+                       RelativePanel.Below="BlueRect"
+                       RelativePanel.AlignLeftWith="BlueRect"
+                       />
+
+
+            <Rectangle x:Name="GreenRect" Fill="Black" 
+               Height="33" Width="88"
+                RelativePanel.AlignBottomWith="Center"                   
+               RelativePanel.RightOf="Center"/>
+            <Rectangle Fill="Black"
+                       Width="33"
+               RelativePanel.AlignBottomWith="BlueRect"
+               RelativePanel.AlignRightWith="GreenRect"
+               RelativePanel.AlignTopWith="BlueRect"/>
+            <Rectangle Fill="Black" x:Name="LeftHand"
+                       Width="88"
+                       RelativePanel.AlignRightWith="Aqua"
+                       RelativePanel.AlignTopWith="Center"
+                       RelativePanel.AlignBottomWith="Center"
+                       RelativePanel.LeftOf="Center"
+                       />
+            <Rectangle Fill="Black" x:Name="Foot"
+                       Height="88"
+                       RelativePanel.Below="Center"
+                       RelativePanel.AlignLeftWith="Center"
+                       RelativePanel.AlignRightWith="Center"
+                       />
+            <Rectangle Fill="Black" x:Name="LowRight"
+                       Height="33" Width="88"
+                       RelativePanel.AlignBottomWith="Foot"
+                       RelativePanel.RightOf="Foot"
+                       />
+            <Rectangle Fill="Black" x:Name="LeftFoot"
+                       Height="88" Width="33"
+                       RelativePanel.AlignLeftWith="LeftHand"
+                       RelativePanel.Below="LeftHand"
+                       />
+
+        </RelativePanel>
     </Grid>
 </Page>
