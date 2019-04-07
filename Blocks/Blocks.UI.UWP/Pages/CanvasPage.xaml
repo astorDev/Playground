@@ -8,7 +8,26 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Sizes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="View For Canvas"/>
+        <TextBlock Text="Here goes flag by Canvas:" 
+                   Margin="20"
+                   Style="{StaticResource TitleTextBlockStyle}"/>
+
+        <Canvas Margin="200">
+            <Rectangle Fill="Black" Style="{StaticResource FlagFootStyle}"/>
+            <Rectangle Fill="White" Canvas.Left="{StaticResource FlagFootWidth}" Style="{StaticResource FlagStripStyle}"/>
+            <Rectangle Fill="Blue" Canvas.Left="{StaticResource FlagFootWidth}" Canvas.Top="{StaticResource FlagStripHeight}" Style="{StaticResource FlagStripStyle}"/>
+            <Rectangle Fill="Red" Canvas.Left="{StaticResource FlagFootWidth}" Canvas.Top="{StaticResource FlagStripHeightDoubled}" Style="{StaticResource FlagStripStyle}"/>
+        </Canvas>
+
+
     </Grid>
 </Page>

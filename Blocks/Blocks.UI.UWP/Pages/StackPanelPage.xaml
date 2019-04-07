@@ -8,7 +8,30 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Sizes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
     <Grid>
-        <TextBlock Text="Hello from Stack Panel View" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Here goes flag by StackPanels:" 
+                   Margin="20"
+                   Style="{StaticResource TitleTextBlockStyle}"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Rectangle Style="{StaticResource FlagFootStyle}" Fill="Black"/>
+            <StackPanel >
+                <Rectangle Fill="White" Style="{StaticResource FlagStripStyle}"/>
+                <Rectangle Fill="Blue" Style="{StaticResource FlagStripStyle}"/>
+                <Rectangle Fill="Red" Style="{StaticResource FlagStripStyle}"/>
+            </StackPanel>
+        </StackPanel>
+        
+
     </Grid>
+    
+
 </Page>

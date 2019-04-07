@@ -8,56 +8,33 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Sizes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
     <Grid>
+        <TextBlock Text="Here goes flag by RelativePanel:" 
+                   Margin="20"
+                   Style="{StaticResource TitleTextBlockStyle}"/>
+
         <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Rectangle x:Name="Aqua" Fill="Black"
-                       Height="33" Width="88"
-                       />
-            <Rectangle x:Name="BlueRect" 
-                       Fill="Black"
-                        Height="88" Width="33"
-                       RelativePanel.RightOf="Aqua"
-               />
-            <Rectangle x:Name="Center" Fill="Black" 
-                       Height="33" Width="33"
-                       RelativePanel.Below="BlueRect"
-                       RelativePanel.AlignLeftWith="BlueRect"
-                       />
-
-
-            <Rectangle x:Name="GreenRect" Fill="Black" 
-               Height="33" Width="88"
-                RelativePanel.AlignBottomWith="Center"                   
-               RelativePanel.RightOf="Center"/>
-            <Rectangle Fill="Black"
-                       Width="33"
-               RelativePanel.AlignBottomWith="BlueRect"
-               RelativePanel.AlignRightWith="GreenRect"
-               RelativePanel.AlignTopWith="BlueRect"/>
-            <Rectangle Fill="Black" x:Name="LeftHand"
-                       Width="88"
-                       RelativePanel.AlignRightWith="Aqua"
-                       RelativePanel.AlignTopWith="Center"
-                       RelativePanel.AlignBottomWith="Center"
-                       RelativePanel.LeftOf="Center"
-                       />
-            <Rectangle Fill="Black" x:Name="Foot"
-                       Height="88"
-                       RelativePanel.Below="Center"
-                       RelativePanel.AlignLeftWith="Center"
-                       RelativePanel.AlignRightWith="Center"
-                       />
-            <Rectangle Fill="Black" x:Name="LowRight"
-                       Height="33" Width="88"
-                       RelativePanel.AlignBottomWith="Foot"
-                       RelativePanel.RightOf="Foot"
-                       />
-            <Rectangle Fill="Black" x:Name="LeftFoot"
-                       Height="88" Width="33"
-                       RelativePanel.AlignLeftWith="LeftHand"
-                       RelativePanel.Below="LeftHand"
-                       />
-
+            <Rectangle x:Name="Black" Fill="Black"
+                       Style="{StaticResource FlagFootStyle}"/>
+            <Rectangle x:Name="White" Fill="White"
+                       Style="{StaticResource FlagStripStyle}"
+                       RelativePanel.RightOf="Black"/>
+            <Rectangle x:Name="Blue" Fill="Blue"
+                       Style="{StaticResource FlagStripStyle}"
+                       RelativePanel.RightOf="Black"
+                       RelativePanel.Below="White"/>
+            <Rectangle x:Name="Red" Fill="Red"
+                       Style="{StaticResource FlagStripStyle}"
+                       RelativePanel.RightOf="Black"
+                       RelativePanel.Below="Blue"/>
         </RelativePanel>
     </Grid>
 </Page>

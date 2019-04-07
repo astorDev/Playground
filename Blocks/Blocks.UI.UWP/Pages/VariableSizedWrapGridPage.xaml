@@ -8,7 +8,30 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Sizes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
     <Grid>
-        <TextBlock Text="Hello from Variable Sized Wrap Grid Page" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Here goes flag by VariableSizedWrapGrid (should become normal flag when content space is neither too slim nor too wide):" 
+                   Margin="20"
+                   Style="{StaticResource TitleTextBlockStyle}"/>
+
+        <VariableSizedWrapGrid Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                               ItemHeight="{StaticResource FlagStripHeight}"
+                               ItemWidth="{StaticResource FlagFootWidth}"
+                               Margin="200">
+            <Rectangle Fill="Black" VariableSizedWrapGrid.RowSpan="8"/>
+
+            <Rectangle Fill="White" VariableSizedWrapGrid.ColumnSpan="8"/>
+            <Rectangle Fill="Blue" VariableSizedWrapGrid.ColumnSpan="8"/>
+            <Rectangle Fill="Red" VariableSizedWrapGrid.ColumnSpan="8"/>
+        </VariableSizedWrapGrid>
+
+
     </Grid>
 </Page>

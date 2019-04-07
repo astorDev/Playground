@@ -17,14 +17,8 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="7*"/>
-        </Grid.ColumnDefinitions>
-
-        <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}" Grid.Column="0">
+    <SplitView IsPaneOpen="True" DisplayMode="Inline">
+        <SplitView.Pane>
             <StackPanel>
                 <TextBlock Text="Blocks" 
                            Style="{StaticResource SubheaderTextBlockStyle}"
@@ -47,7 +41,7 @@
                     </ListViewItem>
                 </ListView>
             </StackPanel>
-        </Grid>
-        <Frame x:Name="ContentFrame" Grid.Column="1"/>
-    </Grid>
+        </SplitView.Pane>
+        <Frame x:Name="ContentFrame" Grid.Column="1" Background="{ThemeResource SystemControlAcrylicElementBrush}" />
+    </SplitView>
 </Page>

@@ -7,8 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Sizes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <Grid>
-        <TextBlock Text="Hello from Grid view" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBlock Text="Here goes flag by Grid:" 
+                   Margin="20"
+                   Style="{StaticResource TitleTextBlockStyle}"/>
+
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{StaticResource FlagFootGridWidth}"/>
+                <ColumnDefinition Width="{StaticResource FlagStripGridWidth}"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource FlagStripGridHeight}"/>
+                <RowDefinition Height="{StaticResource FlagStripGridHeight}"/>
+                <RowDefinition Height="{StaticResource FlagStripGridHeight}"/>
+                <RowDefinition Height="{StaticResource FlagFootLeftGridHeight}"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="Black" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            <Rectangle Fill="White" Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            <Rectangle Fill="Blue" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            <Rectangle Fill="Red" Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+        </Grid>
     </Grid>
+    
+
 </Page>
